@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>
+      your name:
+      <%= `${currentPlayer.name}` %>
+    </h1>
+    <h1>
+      <%= `${currentPlayer.name}` %>
+      's choice:
+      "<%= `${playerSelection}` %>"
+    </h1>
+    <h1>
+      pc choice:
+      "<%= `${currentPlayer.pcChoice}` %>"
+    </h1>
+    
+    <a id="turn-link"href="/game">next round - return to game page</a>
+  </body>
+</html>
