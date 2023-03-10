@@ -33,3 +33,6 @@ const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`ROCK PAPER SCISSORS app listening at http://localhost:${port}`)
 });
+
+
+export default app;

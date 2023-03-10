@@ -21,11 +21,6 @@ router.post('/', (request, response) => {
     currentPlayer: currentPlayer,
     // pass data to ejs file
     playerSelection: request.app.locals.playerSelection,
-
   });
 })
-
-
-
-
 // module.exports = router;

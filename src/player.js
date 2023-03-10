@@ -5,18 +5,19 @@ class Player {
     this.pcChoice = pcChoice;
   }
 
-  takeDamage(amount) {
-    this.health -= amount;
-  }
+  // takeDamage(amount) {
+  //   this.health -= amount;
+  // }
 
   // generate random choice for pc
   generateRandomChoice() {
     const choicesArray = ["rock", "paper", "scissors"];
     // console.log(choicesArray);
     let randomChoice = choicesArray[Math.floor(Math.random() * 3)];
-    console.log(randomChoice);
+    // console.log(randomChoice);
     // return (randomChoice)
     this.setChoice(randomChoice)
+    // this.pcChoice = randomChoice //same as above
   }
 
   // set pc's choice, store to player object
