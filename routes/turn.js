@@ -12,15 +12,15 @@ router.post('/', (request, response) => {
 
   // get data from select element 
   const playerSelection = request.body.playerSelection;
-  // app.locals is JS object, its properties are local variables within app
-  request.app.locals.playerSelection = playerSelection;
+  // same as line 23
+  // request.app.locals.playerSelection = playerSelection;
 
   response.render('turn', {
     // currentPlayer: currentPlayer,
     // otherPlayer: otherPlayer
     currentPlayer: currentPlayer,
-    // pass data to ejs file
-    playerSelection: request.app.locals.playerSelection,
+    // same as line 16
+    playerSelection: playerSelection,
   });
 })
 // module.exports = router;
