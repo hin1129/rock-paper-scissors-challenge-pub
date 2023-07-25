@@ -3,24 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-  </head>
+  </head> 
   <body>
-    <h1>Current Player: <%= name %>!</h1>
-    <!-- <h1>Your health is <%= health %>!</h1> -->
-    <h1>your move</h1>
+    <h1>Current Player: "<%= name %>"</h1>
+    <h1>Your health: <%= health %>!</h1>
+    <h1><%= name %> - your move</h1>
 
-    <form action="/turn" method="post">
-      <!-- for refers to id -->
-      <!-- value of option links to name of select when being submitted -->
-      <label for="playerSelection">select one of them (r/p/s)</label>
-      <select name="playerSelection" id="playerSelection">
-        <option name="rock" value="rock">rock</option>
-        <option name="paper" value="paper">paper</option>
-        <option name="scissors" value="scissors">scissors</option>
-      </select>
+    <!-- check health -->
+    <% if (health> 0) { %>
+      <!-- "form-action" = route that request sends to  -->
+      <form action="/turn" method="post">
+        <!-- "label-for" links to "select-id" -->
+        <!-- "select-name" = name of list -->
+        <!-- "option-value" links to "select-name" when forms being submitted -->
+        <label for="playerSelection">select one of them (r/p/s)</label>
+        <select id="playerSelection" name="playerSelection">
+          <option value="rock">rock</option>
+          <option value="paper">paper</option>
+          <option value="scissors">scissors</option>
+        </select>
 
-      <br><br>
-      <input id="attack-button" type="submit" value="confirm choice - attack">
-    </form>    
+        <br><br>
+        <input id="attack-button" type="submit" value="confirm choice - attack">
+      </form>
+      <% } 
+
+      else { %>
+        <p>Gameover.</p>
+      <% } 
+    %>
+    
+    <br>
+    <a id="turn-link" href="/">restart - return to index page</a>
   </body>
 </html>

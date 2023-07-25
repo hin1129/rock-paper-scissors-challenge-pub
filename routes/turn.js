@@ -1,7 +1,5 @@
 import express from 'express'
 export const router = express.Router()
-// const express = require('express');
-// const router = express.Router();
 
 router.post('/', (request, response) => {
   const battle = request.app.locals.battle;
@@ -10,17 +8,18 @@ router.post('/', (request, response) => {
   // const otherPlayer = battle.otherPlayer();
   // battle.switch();
 
-  // get data from select element 
-  const playerSelection = request.body.playerSelection;
-  // same as line 23
-  // request.app.locals.playerSelection = playerSelection;
+  const playerSelection = request.body.playerSelection; //get player's choice from "select-name"
+  // request.app.locals.playerSelection = playerSelection; //similar to 21
+  const pcSelection = currentPlayer.pcChoice;
+  const winner = battle.determineWinner(playerSelection, pcSelection)
+  if (winner === "PC wins") { currentPlayer.takeDamage(10) }
+  const health = currentPlayer.health;
 
   response.render('turn', {
-    // currentPlayer: currentPlayer,
     // otherPlayer: otherPlayer
     currentPlayer: currentPlayer,
-    // same as line 16
-    playerSelection: playerSelection,
-  });
+    playerSelection: playerSelection, //similar to 12, pass to specific template(ejs)
+    winner: winner,
+    health: health,
+  })
 })
-// module.exports = router;

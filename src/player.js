@@ -1,31 +1,22 @@
 class Player {
   constructor(name, pcChoice = this.generateRandomChoice()) {
     this.name = name;
-    this.health = 100;
     this.pcChoice = pcChoice;
+    this.health = 20;
   }
-
-  // takeDamage(amount) {
-  //   this.health -= amount;
-  // }
 
   // generate random choice for pc
   generateRandomChoice() {
     const choicesArray = ["rock", "paper", "scissors"];
-    // console.log(choicesArray);
     let randomChoice = choicesArray[Math.floor(Math.random() * 3)];
-    // console.log(randomChoice);
-    // return (randomChoice)
+    // this.pcChoice = randomChoice //same as setChoice()
     this.setChoice(randomChoice)
-    // this.pcChoice = randomChoice //same as above
   }
 
   // set pc's choice, store to player object
-  setChoice(pcSelection) {
-    this.pcChoice = pcSelection;
-  }
+  setChoice(pcSelection) { this.pcChoice = pcSelection; }
+
+  takeDamage(amount) { if (this.health != 0) { this.health -= amount; } }
 }
 
 export default Player;
-// "type": "module" cant use module as object
-// module.exports = Player;

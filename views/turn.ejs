@@ -6,19 +6,27 @@
   </head>
   <body>
     <h1>
-      your name:
-      <%= `${currentPlayer.name}` %>
+      Your name: 
+      "<%= `${currentPlayer.name}` %>"
     </h1>
     <h1>
-      <%= `${currentPlayer.name}` %>
-      's choice:
+      <%= `${currentPlayer.name}` %>'s choice:
       "<%= `${playerSelection}` %>"
     </h1>
     <h1>
-      pc choice:
+      Pc's choice:
       "<%= `${currentPlayer.pcChoice}` %>"
     </h1>
+    <h1>
+      Winner is:
+      "<%= `${winner}`%>"
+    </h1>
+    <h1>
+      Player's health is now:
+      "<%= `${health}`%>"
+    </h1>
     
-    <a id="turn-link"href="/game">next round - return to game page</a>
+    <a id="turn-link"href="/game">next round - return to game page</a><br/><br/>    
+    <a id="turn-link" href="/">restart - return to index page</a>
   </body>
 </html>
